@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+
+    <div class="result">
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./src/request_school_code.js"></script>
+    <!-- getSchoolCode -->
+    <script>
+        resultDiv = document.querySelector(".result");
+        let config = {
+                url : getSchoolCode("B10","교동"),
+                method: "get",
+                headers: {
+                  'Access-Control-Allow-Origin': '*',
+                  'Access-Control-Allow-Headers': '*',
+                  'Access-Control-Allow-Credentials': 'true'
+                }
+        };
+        axios.request(config).then(result => {
+            console.log(result.data);
+        });
+        
+    </script>
+</body>
+</html>
